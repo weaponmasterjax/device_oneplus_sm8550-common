@@ -134,6 +134,12 @@ on charger
 #   group system wakelock
 #   capabilities BLOCK_SUSPEND
 
+service power_off_alarm /vendor/bin/power_off_alarm
+    class core
+    group system
+    disabled
+    oneshot
+
 #pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
