@@ -13,7 +13,13 @@ on fs
 
 on boot
     # Display
-    chmod 0000 /sys/kernel/oplus_display/hbm
+    chown system system /dev/oplus_display
+    chown system system /sys/kernel/oplus_display/dimlayer_bl_en
+    chown system system /sys/kernel/oplus_display/dynamic_osc_clock
+    chown system system /sys/kernel/oplus_display/hbm
+    chown system system /sys/kernel/oplus_display/notify_fppress
+    chown system system /sys/kernel/oplus_display/panel_serial_number
+    chown system system /sys/kernel/oplus_display/pwm_onepulse
 
 on post-fs-data
     # ADSP ramdump
@@ -37,3 +43,19 @@ on property:sys.boot_completed=1
     copy /vendor/etc/oplus_Widevine_licenses.pfm /mnt/vendor/persist/data/pfm/licenses/oplus_Widevine_licenses.pfm
     chmod 0600 /mnt/vendor/persist/data/pfm/licenses/oplus_Widevine_licenses.pfm
     chown system system /mnt/vendor/persist/data/pfm/licenses/oplus_Widevine_licenses.pfm
+
+    # OTG
+    chown system system /sys/class/oplus_chg/usb/otg_switch
+    chmod 0666 /sys/class/oplus_chg/usb/otg_switch
+
+    # Measured FPS
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
+
+    # Power efficient workqueue
+    chown system system /sys/module/workqueue/parameters/power_efficient
+    chmod 0666 /sys/module/workqueue/parameters/power_efficient
+
+    # HBM
+    chown system system /sys/kernel/oplus_display/hbm_max
+    chmod 0666 /sys/kernel/oplus_display/hbm_max
