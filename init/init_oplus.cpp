@@ -31,6 +31,7 @@ void vendor_process_bootenv() {
         case 21:
             if (prjname == 22811 || prjname == 23801) { // aston/salami CN
                 InitPropertySet("ro.boot.hardware.revision", "CN");
+                InitPropertySet("ro.mist.device.name", "OnePlus Ace 3");
             } else if (prjname == 22861) { // salami IN
                 InitPropertySet("ro.boot.hardware.revision", "IN");
             }
