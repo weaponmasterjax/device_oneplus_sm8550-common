@@ -415,6 +415,10 @@ on post-fs-data
     #Create dir for TUI
     mkdir /data/vendor/tui 0700 system drmrpc
 
+    # USB 2.0 Force Fast Charge
+    chown system system /sys/module/oplus_chg/parameters/force_fast_charge
+    chown system system /sys/module/oplus_chg/parameters/ffc_val
+
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
     class late_start
     group nfc
