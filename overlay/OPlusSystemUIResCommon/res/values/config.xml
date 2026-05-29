@@ -8,9 +8,6 @@
      vibrator is capable of subtle vibrations -->
     <bool name="config_vibrateOnIconAnimation">true</bool>
 
-     <!-- Update battery info every second when device is charging -->
-     <bool name="config_alternateFastchargeInfoUpdate">true</bool>
-
     <!-- Whether to show a warning notification when device's skin temperature is high. -->
     <integer name="config_showTemperatureWarning">1</integer>
 
