@@ -28,8 +28,12 @@ on post-fs-data
     mkdir /data/vendor/mmdump/adsp 0777 system system
     chmod 0777 /data/vendor/mmdump/adsp
 
-    # Enable WLAN SSR
-    write /sys/kernel/cnss/recovery 1
+    # Set walt Scheduler
+    for policy in /sys/devices/system/cpu/cpufreq/policy*; do
+        if [ -d "$policy" ] && [ -f "$policy/scaling_governor" ]; then
+            echo "walt" > "$policy/scaling_governor"
+        fi
+    done
 
 on property:ro.boot.prjname=*
     # Display
