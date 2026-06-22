@@ -64,6 +64,8 @@ persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
 ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
+# NOTE: OPlus camera properties are centralized in vendor/oplus/camera/camera-vendor.mk
+# Only non-OPlus / hardware-layer camera props should remain here.
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 
 # Chipset
