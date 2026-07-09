@@ -245,3 +245,9 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Include the proprietary files BoardConfig.
 include vendor/oneplus/sm8550-common/BoardConfigVendor.mk
+
+# Allow vendor property_contexts to label ro.oplus.camera.* (which OplusCamera
+# reads at runtime). Vendor partition's strict prefix policy normally blocks
+# anything outside ro.vendor./vendor./persist.vendor./etc. Dodge sm8750-common
+# tree relies on this escape hatch.
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
