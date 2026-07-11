@@ -441,6 +441,3 @@ PRODUCT_PACKAGES += \
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8550-common/sm8550-common-vendor.mk)
-
-# Inherit from JamesDSPManager 
-$(call inherit-product, packages/apps/JamesDSPManager/config.mk)
