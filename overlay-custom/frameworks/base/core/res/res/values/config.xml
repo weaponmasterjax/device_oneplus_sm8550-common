@@ -41,4 +41,7 @@
     <!-- Whether device has an alert slider. -->
     <bool name="config_hasAlertSlider">true</bool>
 
+    <!-- Smart 5G -->
+    <bool name="config_supportSmart5G">true</bool>
+
 </resources>
